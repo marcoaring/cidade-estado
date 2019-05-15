@@ -14,8 +14,8 @@
                 <a href="#" class="btn btn-outline-primary novo-btn">Novo</a>
             </section>
         </header>
-  		<a class="">Loading</a>
-	  	<table class="table">
+
+	  	<table class="table" v-show="estados.length != 0">
 	        <thead>
 	         	<tr>
 	            	<th scope="col">Id</th>
@@ -45,7 +45,9 @@
 	        </tbody>
 	    </table>
 
-	    <Paginacao :total='total' :page='page' :itens-per-page='itensPerPage' @change-page='onChangePage'></Paginacao>
+	    <Paginacao :total="total" :page="page" :itens-per-page="itensPerPage" @change-page="onChangePage" v-show="estados.length != 0"></Paginacao>
+
+        <div class="alert alert-warning" role="alert" v-show="estados.length == 0">Nenhum item foi encontrado para a pesquisa sobre "<strong>{{busca}}</strong>"</div>
 	</div>
 </template>
 
@@ -58,7 +60,7 @@
                 estados: [],
                 page: 1,
                 total: 0,
-                itensPerPage: 10,
+                itensPerPage: 5,
                 busca: ''
             }
         },
