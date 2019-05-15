@@ -5,7 +5,7 @@
             <section class="main-header__busca col-11">
                 <form class="form-inline">
                     <div class="form-group">
-                        <input type="search" class="form-control input-search" name="input-search" placeholder="Pesquisar Cidades/Estados" v-model="busca">
+                        <input type="search" class="form-control input-search" name="input-search" placeholder="Pesquisar Cidades/Estados" v-model="busca" @input="buscarEstados">
                     </div>
                     <button type="submit" class="btn btn-primary ml-3" @click.prevent="buscarEstados">Pesquisar</button>
                 </form>
