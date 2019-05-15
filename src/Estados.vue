@@ -1,6 +1,19 @@
 <template>
   	<div>
-  		<Topo></Topo>
+  		<header class="main-header row">
+            <h1 class="main-header__title col-12">Cidades/Estados</h1>
+            <section class="main-header__busca col-11">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="search" class="form-control input-search" name="input-search" placeholder="Pesquisar Cidades/Estados" v-model="busca">
+                    </div>
+                    <button type="submit" class="btn btn-primary ml-3" @click.prevent="buscarEstados">Pesquisar</button>
+                </form>
+            </section>
+            <section class="main-header__novo col-1 align-self-end">
+                <a href="#" class="btn btn-outline-primary novo-btn">Novo</a>
+            </section>
+        </header>
   		<a class="">Loading</a>
 	  	<table class="table">
 	        <thead>
@@ -37,7 +50,6 @@
 </template>
 
 <script>
-	import Topo from './componentes/topo.vue'
 	import Paginacao from './componentes/paginacao.vue'
   	export default{
   		name: 'Estados',
@@ -46,11 +58,11 @@
                 estados: [],
                 page: 1,
                 total: 0,
-                itensPerPage: 10
+                itensPerPage: 10,
+                busca: ''
             }
         },
   		components:{
-            Topo,
             Paginacao
         },
         methods:{
@@ -58,8 +70,9 @@
                 let t = this;
                 let start = (this.page * this.itensPerPage) - this.itensPerPage;
                 let end = this.page * this.itensPerPage;
+                let qString = (this.busca) ? `&q=${this.busca}` : '';
 
-                this.$http.get(`http://localhost:3000/estados?_start=${start}&_end=${end}`).then(
+                this.$http.get(`http://localhost:3000/estados?_start=${start}&_end=${end}${qString}`).then(
                     response => {
                         this.estados = response.body;
                         this.total = response.headers.map['x-total-count'][0];
@@ -72,6 +85,9 @@
             onChangePage(page){
             	this.page = page;
             	this.loadEstados();
+            },
+            buscarEstados(){
+                this.loadEstados();
             }
         },
         created(){
@@ -81,4 +97,15 @@
 </script>
 
 <style lang="scss">
+    .main-header{
+        margin-bottom: 30px;
+
+        &__title{
+            font-size: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .input-search{ min-width: 280px; }
+    }
 </style>
