@@ -3,7 +3,7 @@
     {
       "nome": "Acre",
       "abreviacao": "AC",
-      "data_alteracao": "2019-5-15 23:10:28",
+      "data_alteracao": "2019-5-16 12:14:54",
       "id": 1
     },
     {
@@ -215,6 +215,20 @@
       "data_criacao": "2019-5-15 22:32:7",
       "data_alteracao": "2019-5-15 22:32:7",
       "id": 31
+    },
+    {
+      "nome": "CCC",
+      "abreviacao": "CC",
+      "data_criacao": "2019-5-16 11:47:55",
+      "data_alteracao": "2019-5-16 11:47:55",
+      "id": 32
+    },
+    {
+      "nome": "DDD",
+      "abreviacao": "DD",
+      "data_criacao": "2019-5-16 12:15:4",
+      "data_alteracao": "2019-5-16 12:15:4",
+      "id": 33
     }
   ],
   "cidades": [

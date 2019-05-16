@@ -18,11 +18,21 @@
 	  	<table class="table" v-show="estados.length != 0">
 	        <thead>
 	         	<tr>
-	            	<th scope="col">Id</th>
-	            	<th scope="col">Nome</th>
-	            	<th scope="col">Abreviação</th>
-	            	<th scope="col">Data de Criação</th>
-	            	<th scope="col">Data de Alteração</th>
+	            	<th scope="col">
+                        <a href="" class="filter-table" @click.prevent="filterTable('id')">Id</a>
+                    </th>
+	            	<th scope="col">
+                        <a href="" class="filter-table" @click.prevent="filterTable('nome')">Nome</a>
+                    </th>
+	            	<th scope="col">
+                        <a href="" class="filter-table" @click.prevent="filterTable('abreviacao')">Abreviação</a>
+                    </th>
+	            	<th scope="col">
+                        <a href="" class="filter-table" @click.prevent="filterTable('data_criacao')">Data de Criação</a>
+                    </th>
+	            	<th scope="col">
+                        <a href="" class="filter-table" @click.prevent="filterTable('data_alteracao')">Data de Alteração</a>
+                    </th>
 	            	<th scope="col">Ações</th>
 	          	</tr>
 	        </thead>
@@ -93,7 +103,9 @@
                 page: 1,
                 total: 0,
                 itensPerPage: 5,
-                busca: ''
+                busca: '',
+                filter: '',
+                order: ''
             }
         },
   		components:{
@@ -125,6 +137,7 @@
                             t.selected = {};
                             dataForm = {};
                             $('#modalform').modal('hide');
+                            t.loadEstados();
                         },
                         error => {
                             console.error(error);
@@ -142,22 +155,22 @@
                             t.selected = {};
                             dataForm = {};
                             $('#modalform').modal('hide');
+                            t.loadEstados();
                         },
                         error => {
                             console.error(error);
                         }
                     )
                 }
-
-                this.loadEstados();
             },
         	loadEstados(){
                 let t = this;
                 let start = (this.page * this.itensPerPage) - this.itensPerPage;
                 let end = this.page * this.itensPerPage;
                 let qString = (this.busca) ? `&q=${this.busca}` : '';
+                let qOrder = (this.filter) ? `&_sort=${this.filter}&_order=${this.order}` : '';
 
-                this.$http.get(`http://localhost:3000/estados?_start=${start}&_end=${end}`).then(
+                this.$http.get(`http://localhost:3000/estados?_start=${start}&_end=${end}${qOrder}${qString}`).then(
                     response => {
                         t.estados = response.body;
                         t.total = response.headers.map['x-total-count'][0];
@@ -166,6 +179,17 @@
                         console.log(error);
                     }
                 )
+            },
+            filterTable(itemFilter){
+                if(this.filter == itemFilter && this.order == 'asc'){
+                    this.order = 'desc';
+                } else{
+                    this.order = 'asc';
+                }
+
+                this.filter = itemFilter;
+                
+                this.loadEstados();
             },
             onChangePage(page){
             	this.page = page;
@@ -195,5 +219,19 @@
         }
 
         .input-search{ min-width: 280px; }
+    }
+
+    .filter-table{
+        color: #000;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        transition: all .5s ease;
+
+        &:hover{
+            color: #007bff;
+            text-decoration: none;
+        }
     }
 </style>
