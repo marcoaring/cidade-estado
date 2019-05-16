@@ -1,18 +1,17 @@
 {
   "estados": [
     {
-      "id": 1,
       "nome": "Acre",
       "abreviacao": "AC",
-      "data_criacao": "",
-      "data_alteracao": "2019-05-15 11:17:20"
+      "data_alteracao": "2019-5-15 23:10:28",
+      "id": 1
     },
     {
-      "id": 2,
       "nome": "Alagoas",
       "abreviacao": "AL",
       "data_criacao": "",
-      "data_alteracao": "2019-05-15 11:17:20"
+      "data_alteracao": "2019-5-15 21:37:53",
+      "id": 2
     },
     {
       "id": 3,
@@ -188,6 +187,34 @@
       "abreviacao": "TO",
       "data_criacao": "",
       "data_alteracao": "2019-05-15 11:17:20"
+    },
+    {
+      "nome": "ACM",
+      "abreviacao": "AC",
+      "data_criacao": "2019-5-15 22:3:28",
+      "data_alteracao": "2019-5-15 22:3:28",
+      "id": 28
+    },
+    {
+      "nome": "ABC",
+      "abreviacao": "AB",
+      "data_criacao": "2019-5-15 22:3:55",
+      "data_alteracao": "2019-5-15 22:3:55",
+      "id": 29
+    },
+    {
+      "nome": "BCC",
+      "abreviacao": "BC",
+      "data_criacao": "2019-5-15 22:29:43",
+      "data_alteracao": "2019-5-15 22:29:43",
+      "id": 30
+    },
+    {
+      "nome": "BCC",
+      "abreviacao": "BA",
+      "data_criacao": "2019-5-15 22:32:7",
+      "data_alteracao": "2019-5-15 22:32:7",
+      "id": 31
     }
   ],
   "cidades": [
