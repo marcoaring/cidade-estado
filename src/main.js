@@ -5,6 +5,7 @@ import VueResource from 'vue-resource'
 import swal from 'sweetalert'
 import Home from './Home.vue'
 import Estados from './Estados.vue'
+import Cidades from './Cidades.vue'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -19,7 +20,11 @@ const router = new VueRouter({
     	{ 
     		path: '/estados', 
     		component: Estados 
-    	}
+    	},
+      { 
+        path: '/cidades', 
+        component: Cidades 
+      }
   	],
 });
 
