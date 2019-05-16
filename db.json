@@ -3,13 +3,14 @@
     {
       "nome": "Acre",
       "abreviacao": "AC",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-5-16 15:56:25",
       "id": 1
     },
     {
       "nome": "Alagoas",
       "abreviacao": "AL",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-5-16 15:44:17",
       "id": 2
     },
@@ -17,204 +18,176 @@
       "id": 3,
       "nome": "Amapá",
       "abreviacao": "AP",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 4,
       "nome": "Amazonas",
       "abreviacao": "AM",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 5,
       "nome": "Bahia",
       "abreviacao": "BA",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 6,
       "nome": "Ceará",
       "abreviacao": "CE",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 7,
       "nome": "Distrito Federal",
       "abreviacao": "DF",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 8,
       "nome": "Espírito Santo",
       "abreviacao": "ES",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 9,
       "nome": "Goiás",
       "abreviacao": "GO",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 10,
       "nome": "Maranhão",
       "abreviacao": "MA",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 11,
       "nome": "Mato Grosso",
       "abreviacao": "MT",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 12,
       "nome": "Mato Grosso do Sul",
       "abreviacao": "MS",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 13,
       "nome": "Minas Gerais",
       "abreviacao": "MG",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 14,
       "nome": "Pará",
       "abreviacao": "PA",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 15,
       "nome": "Paraíba",
       "abreviacao": "PB",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 16,
       "nome": "Paraná",
       "abreviacao": "PR",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 17,
       "nome": "Pernambuco",
       "abreviacao": "PE",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 18,
       "nome": "Piauí",
       "abreviacao": "PI",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 19,
       "nome": "Rio de Janeiro",
       "abreviacao": "RJ",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 20,
       "nome": "Rio Grande do Norte",
       "abreviacao": "RN",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 21,
       "nome": "Rio Grande do Sul",
       "abreviacao": "RS",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 22,
       "nome": "Rondônia",
       "abreviacao": "RO",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 23,
       "nome": "Roraima",
       "abreviacao": "RR",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 24,
       "nome": "Santa Catarina",
       "abreviacao": "SC",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 25,
       "nome": "São Paulo",
       "abreviacao": "SP",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 26,
       "nome": "Sergipe",
       "abreviacao": "SE",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 27,
       "nome": "Tocantins",
       "abreviacao": "TO",
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
-    },
-    {
-      "nome": "ACM",
-      "abreviacao": "AC",
-      "data_criacao": "2019-5-15 22:3:28",
-      "data_alteracao": "2019-5-15 22:3:28",
-      "id": 28
-    },
-    {
-      "nome": "ABC",
-      "abreviacao": "AB",
-      "data_criacao": "2019-5-15 22:3:55",
-      "data_alteracao": "2019-5-15 22:3:55",
-      "id": 29
-    },
-    {
-      "nome": "BCC",
-      "abreviacao": "BC",
-      "data_criacao": "2019-5-15 22:29:43",
-      "data_alteracao": "2019-5-15 22:29:43",
-      "id": 30
-    },
-    {
-      "nome": "Marco",
-      "abreviacao": "MA",
-      "data_criacao": "2019-5-16 15:57:0",
-      "data_alteracao": "2019-5-16 15:57:0",
-      "id": 31
     }
   ],
   "cidades": [
@@ -222,182 +195,182 @@
       "id": 1,
       "nome": "Rio Branco",
       "estado_id": 1,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 2,
       "nome": "Maceió",
       "estado_id": 2,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 3,
       "nome": "Macapá",
       "estado_id": 3,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 4,
       "nome": "Manaus",
       "estado_id": 4,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 5,
       "nome": "Salvador",
       "estado_id": 5,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 6,
       "nome": "Fortaleza",
       "estado_id": 6,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 7,
       "nome": "Brasília",
       "estado_id": 7,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 8,
       "nome": "Vitória",
       "estado_id": 8,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 9,
       "nome": "Goiânia",
       "estado_id": 9,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 10,
       "nome": "São Luís",
       "estado_id": 10,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 11,
       "nome": "Cuiabá",
       "estado_id": 11,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 12,
       "nome": "Campo Grande",
       "estado_id": 12,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 13,
       "nome": "Belo Horizonte",
       "estado_id": 13,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 14,
       "nome": "Belém",
       "estado_id": 14,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 15,
       "nome": "João Pessoa",
       "estado_id": 15,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 16,
       "nome": "Curitiba",
       "estado_id": 16,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 17,
       "nome": "Recife",
       "estado_id": 17,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 18,
       "nome": "Teresina",
       "estado_id": 18,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 19,
       "nome": "Rio de Janeiro",
       "estado_id": 19,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 20,
       "nome": "Natal",
       "estado_id": 20,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 21,
       "nome": "Porto Alegre",
       "estado_id": 21,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 22,
       "nome": "Boa Vista",
       "estado_id": 22,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 23,
       "nome": "Florianópolis",
       "estado_id": 23,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 24,
       "nome": "São Paulo",
       "estado_id": 24,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 25,
       "nome": "Aracaju",
       "estado_id": 25,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     },
     {
       "id": 26,
       "nome": "Palmas",
       "estado_id": 26,
-      "data_criacao": "",
+      "data_criacao": "2019-05-15 11:17:20",
       "data_alteracao": "2019-05-15 11:17:20"
     }
   ]
