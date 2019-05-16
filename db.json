@@ -3,14 +3,14 @@
     {
       "nome": "Acre",
       "abreviacao": "AC",
-      "data_alteracao": "2019-5-16 12:14:54",
+      "data_alteracao": "2019-5-16 15:56:25",
       "id": 1
     },
     {
       "nome": "Alagoas",
       "abreviacao": "AL",
       "data_criacao": "",
-      "data_alteracao": "2019-5-15 21:37:53",
+      "data_alteracao": "2019-5-16 15:44:17",
       "id": 2
     },
     {
@@ -208,6 +208,13 @@
       "data_criacao": "2019-5-15 22:29:43",
       "data_alteracao": "2019-5-15 22:29:43",
       "id": 30
+    },
+    {
+      "nome": "Marco",
+      "abreviacao": "MA",
+      "data_criacao": "2019-5-16 15:57:0",
+      "data_alteracao": "2019-5-16 15:57:0",
+      "id": 31
     }
   ],
   "cidades": [

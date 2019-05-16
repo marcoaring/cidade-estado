@@ -70,6 +70,12 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <div class="alert alert-danger" role="alert" v-if="errors.length">
+                            <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
+                            <ul>
+                                <li v-for="error in errors">{{ error }}</li>
+                            </ul>
+                        </div>
                         <div class="row">
                             <div class="form-group col-6">
                                 <label>Nome</label>
@@ -78,12 +84,12 @@
 
                             <div class="form-group col-6">
                                 <label>Abreviação</label>
-                                <input type="text" class="form-control" ref="input_abreviacao" placeholder="Digite a abreviação" maxlength="2" @input="convertToNumber(this)" v-bind:value="selected.abreviacao">
+                                <input type="text" class="form-control" ref="input_abreviacao" placeholder="Digite a abreviação" maxlength="2" v-bind:value="selected.abreviacao">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" @click.prevent="salvarEstado">Salvar novo Estado</button>
+                        <button type="button" class="btn btn-primary" @click.prevent="validateForm">Salvar novo Estado</button>
                         <button type="button" class="btn btn-secondary" @click.prevent="fecharModal">Cancelar</button>
                     </div>
                 </div>
@@ -224,28 +230,26 @@
                 $('#modalform').modal('hide');
             },
             validateForm(){
-                if (this.$refs.input_nome.value && this.$refs.input_abreviacao.value) {
-                    return true;
-                }
-
                 this.errors = [];
 
                 if(!this.$refs.input_nome.value){
                     this.errors.push('O nome é obrigatório.');
                 }
 
-                if(!this.age){
-                    this.errors.push('A idade é obrigatória.');
+                if(!this.$refs.input_abreviacao.value){
+                    this.errors.push('A abreviação é obrigatória.');
                 }
 
-                e.preventDefault();
-            },
-            convertToNumber(num){
-                var er = /[^0-9]/;
-                er.lastIndex = 0;
-                var campo = num;
-                if (er.test(campo.value)) {
-                    campo.value = "";
+                if(this.$refs.input_abreviacao.value.length == 1){
+                    this.errors.push('A abreviação tem que possui 2 caracteres.');
+                }
+
+                if(/^\d+$/.test(this.$refs.input_abreviacao.value)){
+                    this.errors.push('A abreviação só pode conter letras.');
+                }
+
+                if(this.errors.length == 0){
+                    this.salvarEstado();
                 }
             }
         },
