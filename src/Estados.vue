@@ -47,7 +47,7 @@
 	              		<a href="#" class="btn-table btn-edit" @click.prevent="editarEstado(estado)">
 	                		<i class="fa fa-edit"></i>
 	              		</a>
-	              		<a href="#" class="btn-table btn-delete">
+	              		<a href="#" class="btn-table btn-delete" @click.prevent="removeEstado(estado)">
 	                		<i class="fa fa-trash"></i>
 	              		</a>
 	            	</td>
@@ -162,6 +162,27 @@
                         }
                     )
                 }
+            },
+            removeEstado(estado){
+                let self = this;
+                swal({
+                    title: "Você tem certeza?",
+                    text: `Deseja apagar o estado "${estado.nome}"`,   
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                }).then((willDelete) => {
+                    if(willDelete){
+                        self.$http.delete(`http://localhost:3000/estados/${estado.id}`).then(
+                            result => {
+                                swal("Estado removido!", { icon: "success" });
+                                self.loadEstados();
+                            }
+                        );
+                    } else{
+                        swal("O estado não pode ser removido.");
+                    }
+                });
             },
         	loadEstados(){
                 let t = this;

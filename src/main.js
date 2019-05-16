@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import VueResource from 'vue-resource'
+import swal from 'sweetalert'
 import Home from './Home.vue'
 import Estados from './Estados.vue'
 
