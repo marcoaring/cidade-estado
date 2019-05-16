@@ -78,7 +78,7 @@
 
                             <div class="form-group col-6">
                                 <label>Abreviação</label>
-                                <input type="text" class="form-control" ref="input_abreviacao" placeholder="Digite a abreviação" maxlength="2" v-bind:value="selected.abreviacao">
+                                <input type="text" class="form-control" ref="input_abreviacao" placeholder="Digite a abreviação" maxlength="2" @input="convertToNumber(this)" v-bind:value="selected.abreviacao">
                             </div>
                         </div>
                     </div>
@@ -99,6 +99,7 @@
   		data(){
             return{
                 estados: [],
+                errors: [],
                 selected: {},
                 page: 1,
                 total: 0,
@@ -221,6 +222,31 @@
             },
             fecharModal(){
                 $('#modalform').modal('hide');
+            },
+            validateForm(){
+                if (this.$refs.input_nome.value && this.$refs.input_abreviacao.value) {
+                    return true;
+                }
+
+                this.errors = [];
+
+                if(!this.$refs.input_nome.value){
+                    this.errors.push('O nome é obrigatório.');
+                }
+
+                if(!this.age){
+                    this.errors.push('A idade é obrigatória.');
+                }
+
+                e.preventDefault();
+            },
+            convertToNumber(num){
+                var er = /[^0-9]/;
+                er.lastIndex = 0;
+                var campo = num;
+                if (er.test(campo.value)) {
+                    campo.value = "";
+                }
             }
         },
         created(){
