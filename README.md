@@ -19,7 +19,4 @@ json-server --watch db.json
 
 # rodar servidor com auto load que abrirá em localhost:8080
 npm run dev
-
-# rodar o build da aplicação
-npm run build
 ```
