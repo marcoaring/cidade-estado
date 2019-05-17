@@ -192,11 +192,11 @@
   ],
   "cidades": [
     {
-      "id": 1,
       "nome": "Rio Branco",
-      "estado_id": 1,
+      "estado_id": "1",
       "data_criacao": "2019-05-15 11:17:20",
-      "data_alteracao": "2019-05-15 11:17:20"
+      "data_alteracao": "2019-5-16 21:27:52",
+      "id": 1
     },
     {
       "id": 2,

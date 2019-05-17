@@ -5,17 +5,17 @@
             <section class="main-header__busca col-11">
                 <form class="form-inline">
                     <div class="form-group">
-                        <input type="search" class="form-control input-search" name="input-search" placeholder="Pesquisar Cidades" v-model="busca" @input="buscarEstados">
+                        <input type="search" class="form-control input-search" name="input-search" placeholder="Pesquisar Cidades" v-model="busca" @input="buscarCidades">
                     </div>
-                    <button type="submit" class="btn btn-primary ml-3" @click.prevent="buscarEstados">Pesquisar</button>
+                    <button type="submit" class="btn btn-primary ml-3" @click.prevent="buscarCidades">Pesquisar</button>
                 </form>
             </section>
             <section class="main-header__novo col-1 align-self-end">
-                <a href="#" class="btn btn-outline-primary novo-btn" @click.prevent="novoEstado">Novo</a>
+                <a href="#" class="btn btn-outline-primary novo-btn" @click.prevent="novaCidade">Novo</a>
             </section>
         </header>
     
-	  	<table class="table" v-show="estados.length != 0">
+	  	<table class="table" v-show="cidades.length != 0">
 	        <thead>
 	         	<tr>
 	            	<th scope="col">
@@ -25,7 +25,7 @@
                         <a href="" class="filter-table" @click.prevent="filterTable('nome')">Nome</a>
                     </th>
 	            	<th scope="col">
-                        <a href="" class="filter-table" @click.prevent="filterTable('abreviacao')">Abreviação</a>
+                        <a href="" class="filter-table" @click.prevent="filterTable('estado_id')">ID Estado</a>
                     </th>
 	            	<th scope="col">
                         <a href="" class="filter-table" @click.prevent="filterTable('data_criacao')">Data de Criação</a>
@@ -37,17 +37,17 @@
 	          	</tr>
 	        </thead>
 	        <tbody>
-	          	<tr v-for="estado in estados" v-bind:key="estado.id">
-	            	<th scope="row">{{estado.id}}</th>
-	            	<td>{{estado.nome}}</td>
-	            	<td>{{estado.abreviacao}}</td>
-	            	<td>{{estado.data_criacao}}</td>
-	            	<td>{{estado.data_alteracao}}</td>
+	          	<tr v-for="cidade in cidades" v-bind:key="cidade.id">
+	            	<th scope="row">{{cidade.id}}</th>
+	            	<td>{{cidade.nome}}</td>
+	            	<td>{{cidade.estado_id}}</td>
+	            	<td>{{cidade.data_criacao}}</td>
+	            	<td>{{cidade.data_alteracao}}</td>
 	            	<td>
-	              		<a href="#" class="btn-table btn-edit" @click.prevent="editarEstado(estado)">
+	              		<a href="#" class="btn-table btn-edit" @click.prevent="editarCidade(cidade)">
 	                		<i class="fa fa-edit"></i>
 	              		</a>
-	              		<a href="#" class="btn-table btn-delete" @click.prevent="removeEstado(estado)">
+	              		<a href="#" class="btn-table btn-delete" @click.prevent="removeCidade(cidade)">
 	                		<i class="fa fa-trash"></i>
 	              		</a>
 	            	</td>
@@ -55,9 +55,9 @@
 	        </tbody>
 	    </table>
 
-	    <Paginacao :total="total" :page="page" :itens-per-page="itensPerPage" @change-page="onChangePage" v-show="estados.length != 0"></Paginacao>
+	    <Paginacao :total="total" :page="page" :itens-per-page="itensPerPage" @change-page="onChangePage" v-show="cidades.length != 0"></Paginacao>
 
-        <div class="alert alert-warning" role="alert" v-show="estados.length == 0">Nenhum item foi encontrado para a pesquisa sobre "<strong>{{busca}}</strong>"</div>
+        <div class="alert alert-warning" role="alert" v-show="cidades.length == 0">Nenhum item foi encontrado para a pesquisa sobre "<strong>{{busca}}</strong>"</div>
 
         <!-- Modal -->
         <div class="modal fade" id="modalform" tabindex="-1" role="dialog" aria-hidden="true">
@@ -83,13 +83,16 @@
                             </div>
 
                             <div class="form-group col-6">
-                                <label>Abreviação</label>
-                                <input type="text" class="form-control" ref="input_abreviacao" placeholder="Digite a abreviação" maxlength="2" v-bind:value="selected.abreviacao">
+                                <label>Estado</label>
+                                <select name="input_estado_id" class="form-control" ref="input_estado_id">
+                                    <option value="">Selecione um Estado</option>
+                                    <option v-for="estado in estados" v-bind:value="estado.id" :selected="estado.id === selected.estado_id">{{estado.nome}}</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" @click.prevent="validateForm">Salvar novo Estado</button>
+                        <button type="button" class="btn btn-primary" @click.prevent="validateForm">Salvar nova Cidade</button>
                         <button type="button" class="btn btn-secondary" @click.prevent="fecharModal">Cancelar</button>
                     </div>
                 </div>
@@ -101,9 +104,10 @@
 <script>
 	import Paginacao from './componentes/paginacao.vue'
   	export default{
-  		name: 'Estados',
+  		name: 'Cidades',
   		data(){
             return{
+                cidades: [],
                 estados: [],
                 errors: [],
                 selected: {},
@@ -112,22 +116,22 @@
                 itensPerPage: 5,
                 busca: '',
                 filter: '',
-                order: ''
+                order: '',
             }
         },
   		components:{
             Paginacao
         },
         methods:{
-            novoEstado(){
+            novaCidade(){
                 this.selected = {};
                 $('#modalform').modal('show');
             },
-            editarEstado(estado){
-                this.selected = estado;
+            editarCidade(cidade){
+                this.selected = cidade;
                 $('#modalform').modal('show');
             },
-            salvarEstado(){
+            salvarCidade(){
                 let dataForm = {};
                 let t = this;
                 const date = new Date();
@@ -135,16 +139,16 @@
 
                 if(this.selected.id != null){ //EDIÇÃO
                     dataForm.nome = this.$refs.input_nome.value;
-                    dataForm.abreviacao = this.$refs.input_abreviacao.value;
+                    dataForm.estado_id = this.$refs.input_estado_id.value;
                     dataForm.data_criacao = this.selected.data_criacao;
                     dataForm.data_alteracao = currentDate;
 
-                    this.$http.put(`http://localhost:3000/estados/${this.selected.id}`, dataForm).then(
+                    this.$http.put(`http://localhost:3000/cidades/${this.selected.id}`, dataForm).then(
                         response => {
                             t.selected = {};
                             dataForm = {};
                             $('#modalform').modal('hide');
-                            t.loadEstados();
+                            t.loadCidades();
                         },
                         error => {
                             console.error(error);
@@ -154,15 +158,15 @@
 
                 else{ //NOVO
                     dataForm.nome = this.$refs.input_nome.value;
-                    dataForm.abreviacao = this.$refs.input_abreviacao.value;
+                    dataForm.estado_id = this.$refs.input_estado_id.value;
                     dataForm.data_criacao = currentDate;
                     dataForm.data_alteracao = currentDate;
-                    this.$http.post(`http://localhost:3000/estados`,dataForm).then(
+                    this.$http.post(`http://localhost:3000/cidades`,dataForm).then(
                         response => {
                             t.selected = {};
                             dataForm = {};
                             $('#modalform').modal('hide');
-                            t.loadEstados();
+                            t.loadCidades();
                         },
                         error => {
                             console.error(error);
@@ -170,38 +174,50 @@
                     )
                 }
             },
-            removeEstado(estado){
+            removeCidade(cidade){
                 let self = this;
                 swal({
                     title: "Você tem certeza?",
-                    text: `Deseja apagar o estado "${estado.nome}"`,   
+                    text: `Deseja apagar a cidade "${cidade.nome}"`,   
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
                 }).then((willDelete) => {
                     if(willDelete){
-                        self.$http.delete(`http://localhost:3000/estados/${estado.id}`).then(
+                        self.$http.delete(`http://localhost:3000/cidades/${cidade.id}`).then(
                             result => {
-                                swal("Estado removido!", { icon: "success" });
-                                self.loadEstados();
+                                swal("Cidade removida!", { icon: "success" });
+                                self.loadCidades();
                             }
                         );
                     } else{
-                        swal("O estado não pode ser removido.");
+                        swal("A cidade não pode ser removida.");
                     }
                 });
             },
-        	loadEstados(){
+        	loadCidades(){
                 let t = this;
                 let start = (this.page * this.itensPerPage) - this.itensPerPage;
                 let end = this.page * this.itensPerPage;
                 let qString = (this.busca) ? `&q=${this.busca}` : '';
                 let qOrder = (this.filter) ? `&_sort=${this.filter}&_order=${this.order}` : '';
 
-                this.$http.get(`http://localhost:3000/estados?_start=${start}&_end=${end}${qOrder}${qString}`).then(
+                this.$http.get(`http://localhost:3000/cidades?_start=${start}&_end=${end}${qOrder}${qString}`).then(
+                    response => {
+                        t.cidades = response.body;
+                        t.total = response.headers.map['x-total-count'][0];
+                    },
+                    error => {
+                        console.log(error);
+                    }
+                )
+            },
+            loadEstados(){
+                let t = this;
+
+                this.$http.get(`http://localhost:3000/estados`).then(
                     response => {
                         t.estados = response.body;
-                        t.total = response.headers.map['x-total-count'][0];
                     },
                     error => {
                         console.log(error);
@@ -217,14 +233,14 @@
 
                 this.filter = itemFilter;
                 
-                this.loadEstados();
+                this.loadCidades();
             },
             onChangePage(page){
             	this.page = page;
-            	this.loadEstados();
+            	this.loadCidades();
             },
-            buscarEstados(){
-                this.loadEstados();
+            buscarCidades(){
+                this.loadCidades();
             },
             fecharModal(){
                 $('#modalform').modal('hide');
@@ -236,24 +252,17 @@
                     this.errors.push('O nome é obrigatório.');
                 }
 
-                if(!this.$refs.input_abreviacao.value){
-                    this.errors.push('A abreviação é obrigatória.');
-                }
-
-                if(this.$refs.input_abreviacao.value.length == 1){
-                    this.errors.push('A abreviação tem que possui 2 caracteres.');
-                }
-
-                if(/^\d+$/.test(this.$refs.input_abreviacao.value)){
-                    this.errors.push('A abreviação só pode conter letras.');
+                if(!this.$refs.input_estado_id.value){
+                    this.errors.push('O estado da cidade é obrigatório.');
                 }
 
                 if(this.errors.length == 0){
-                    this.salvarEstado();
+                    this.salvarCidade();
                 }
             }
         },
         created(){
+            this.loadCidades();
             this.loadEstados();
         }
   	}
