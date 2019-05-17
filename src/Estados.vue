@@ -1,7 +1,7 @@
 <template>
   	<div>
   		<header class="main-header row">
-            <h1 class="main-header__title col-12">Estados</h1>
+            <h1 class="main-header__title col-12">Estados <a href="./">[Voltar]</a></h1>
             <section class="main-header__busca col-11">
                 <form class="form-inline">
                     <div class="form-group">
@@ -267,6 +267,8 @@
             font-size: 30px;
             margin-top: 30px;
             margin-bottom: 30px;
+
+            a{ font-size: 12px; }
         }
 
         .input-search{ min-width: 280px; }
