@@ -1,18 +1,25 @@
-# cidade-estado
+# CRUD de Cidade e Estado
 
 > Projeto para a entrevista na empresa Zoox em VUE
 
-## Build Setup
+## Setup
 
 ``` bash
-# install dependencies
-npm install
+# instalação Global
+npm i -g json-server
 
-# serve with hot reload at localhost:8080
+git clone https://github.com/marcoaring/cidade-estado.git
+cd cidade-estado
+
+# instalar dependências
+npm i
+
+# rodar servidor do json-server que abrirá em localhost:3000
+json-server --watch db.json
+
+# rodar servidor com auto load que abrirá em localhost:8080
 npm run dev
 
-# build for production with minification
+# rodar o build da aplicação
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
